@@ -6,7 +6,7 @@ import cv2
 
 class TankGcsNode(Node):
     def __init__(self):
-        super().__init__('video_hud')
+        super().__init__('hud_node')
         self.sub = self.create_subscription(Image, '/camera/image_raw', self.cb, 10)
         self.bridge = CvBridge()
 

@@ -5,22 +5,28 @@ import os
 
 def generate_launch_description():
 
-    config_teleop = os.path.join(
-            get_package_share_directory('my_robot_teleop'),
-            'config',
-            'trustmaster.yaml'
+    config_joy = os.path.join(
+        get_package_share_directory('gcs_bringup'),
+        'config',
+        'trustmaster.yaml'
     )
 
     return LaunchDescription([
         
         Node(
+            package='joy',
+            executable='joy_node',
+        ),
+
+        Node(
             package='teleop_twist_joy',
             executable='teleop_node',
-            parameters=[config_teleop]
+            name = 'teleop_node',
+            parameters=[config_joy],
         ),
 
         Node(
             package='gcs_pkg',
-            executable='hub_node',
+            executable='hud_node',
         )
     ])
