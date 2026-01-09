@@ -1,0 +1,27 @@
+joy_node:
+  ros__parameters:
+    # Axes mapping
+    axis_linear:
+      x: 3
+      y: -1
+      z: -1
+
+    axis_angular:
+      yaw: 4
+      pitch: -1
+      roll: -1
+
+    # Scales
+    scale_linear:
+      x: 1
+      y: 0.0
+      z: 0.0
+
+    scale_angular:
+      yaw: 1
+      pitch: 0.0
+      roll: 0.0
+
+    # Enable buttons (disabled with -1)
+    enable_button: 1
+    enable_turbo_button: -1
